@@ -46,13 +46,13 @@ public class StoreBookServlet extends HttpServlet {
 
             // Read the books from the database with the respective bookIds
             List<Book> books = bookService.getAllBooks();
-            pw.println("<div id='topmid' style='background-color:grey'>Books Available In the Store</div>");
+            pw.println("<div id='topmid' style='background-color:grey'>Items Available In the Store</div>");
             pw.println("<table class=\"table table-hover\" style='background-color:white'>\r\n"
                     + "  <thead>\r\n"
                     + "    <tr style='background-color:black; color:white;'>\r\n"
-                    + "      <th scope=\"col\">BookId</th>\r\n"
+                    + "      <th scope=\"col\">ProductId</th>\r\n"
                     + "      <th scope=\"col\">Name</th>\r\n"
-                    + "      <th scope=\"col\">Author</th>\r\n"
+                    + "      <th scope=\"col\">Supplier</th>\r\n"
                     + "      <th scope=\"col\">Price</th>\r\n"
                     + "      <th scope=\"col\">Quantity</th>\r\n"
                     + "      <th scope=\"col\">Action</th>\r\n"
@@ -80,7 +80,7 @@ public class StoreBookServlet extends HttpServlet {
         return "    <tr>\r\n"
                 + "      <th scope=\"row\">" + book.getBarcode() + "</th>\r\n"
                 + "      <td>" + book.getName() + "</td>\r\n"
-                + "      <td>" + book.getAuthor() + "</td>\r\n"
+                + "      <td>" + book.getSupplier() + "</td>\r\n"
                 + "      <td><span>&#8377;</span> " + book.getPrice() + "</td>\r\n"
                 + "      <td>"
                 + book.getQuantity()

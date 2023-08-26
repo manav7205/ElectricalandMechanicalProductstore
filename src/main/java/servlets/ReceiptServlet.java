@@ -39,8 +39,8 @@ public class ReceiptServlet extends HttpServlet {
             pw.println("<div class=\"tab\">Your order status is as below</div>");
             pw.println(
                     "<div class=\"tab\">\r\n" + "		<table>\r\n" + "			<tr>\r\n" + "				\r\n"
-                            + "				<th>Book Code</th>\r\n" + "				<th>Book Name</th>\r\n"
-                            + "				<th>Book Author</th>\r\n" + "				<th>Book Price</th>\r\n"
+                            + "				<th>Product Code</th>\r\n" + "				<th>Product Name</th>\r\n"
+                            + "				<th>Product Supplier</th>\r\n" + "				<th>Product Price</th>\r\n"
                             + "				<th>Quantity</th><br/>\r\n" + "				<th>Amount</th><br/>\r\n"
                             + "			</tr>");
             double total = 0.0;
@@ -48,7 +48,7 @@ public class ReceiptServlet extends HttpServlet {
                 double bPrice = book.getPrice();
                 String bCode = book.getBarcode();
                 String bName = book.getName();
-                String bAuthor = book.getAuthor();
+                String bSupplier = book.getSupplier();
                 int bQty = book.getQuantity();
                 i = i + 1;
 
@@ -59,14 +59,14 @@ public class ReceiptServlet extends HttpServlet {
                     String getChecked = req.getParameter(check1);
                     if (bQty < quantity) {
                         pw.println(
-                                "</table><div class=\"tab\" style='color:red;'>Please Select the Qty less than Available Books Quantity</div>");
+                                "</table><div class=\"tab\" style='color:red;'>Please Select the Qty less than Available Product Quantity</div>");
                         break;
                     }
 
                     if (getChecked.equals("pay")) {
                         pw.println("<tr><td>" + bCode + "</td>");
                         pw.println("<td>" + bName + "</td>");
-                        pw.println("<td>" + bAuthor + "</td>");
+                        pw.println("<td>" + bSupplier + "</td>");
                         pw.println("<td>" + bPrice + "</td>");
                         pw.println("<td>" + quantity + "</td>");
                         double amount = bPrice * quantity;

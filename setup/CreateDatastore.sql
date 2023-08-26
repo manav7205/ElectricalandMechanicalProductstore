@@ -2,11 +2,11 @@ CREATE DATABASE if not exists onlinebookstore;
 
 \c onlinebookstore
 
-CREATE TABLE if not exists books 
+CREATE TABLE if not exists products 
   ( 
      barcode   VARCHAR(100) PRIMARY KEY, 
      name      TEXT NOT NULL, 
-     author    VARCHAR(100) NOT NULL, 
+     supplier    VARCHAR(100) NOT NULL, 
      price     INT, 
      quantity  REAL
   ); 

@@ -34,14 +34,14 @@ public class BuyBooksServlet extends HttpServlet {
             RequestDispatcher rd = req.getRequestDispatcher("CustomerHome.html");
             rd.include(req, res);
             StoreUtil.setActiveTab(pw, "cart");
-            pw.println("<div class=\"tab hd brown \">Books Available In Our Store</div>");
+            pw.println("<div class=\"tab hd brown \">Products Available In Our Store</div>");
             pw.println("<div class=\"tab\"><form action=\"buys\" method=\"post\">");
             pw.println("<table>\r\n" +
                     "			<tr>\r\n" +
                     "				<th>Books</th>\r\n" +
                     "				<th>Code</th>\r\n" +
                     "				<th>Name</th>\r\n" +
-                    "				<th>Author</th>\r\n" +
+                    "				<th>Supplier</th>\r\n" +
                     "				<th>Price</th>\r\n" +
                     "				<th>Avail</th>\r\n" +
                     "				<th>Qty</th>\r\n" +
@@ -50,7 +50,7 @@ public class BuyBooksServlet extends HttpServlet {
             for (Book book : books) {
                 String bCode = book.getBarcode();
                 String bName = book.getName();
-                String bAuthor = book.getAuthor();
+                String bSupplier = book.getSupplier();
                 double bPrice = book.getPrice();
                 int bAvl = book.getQuantity();
                 i = i + 1;
@@ -64,7 +64,7 @@ public class BuyBooksServlet extends HttpServlet {
                         "				</td>");
                 pw.println("<td>" + bCode + "</td>");
                 pw.println("<td>" + bName + "</td>");
-                pw.println("<td>" + bAuthor + "</td>");
+                pw.println("<td>" + bSupplier + "</td>");
                 pw.println("<td>" + bPrice + "</td>");
                 pw.println("<td>" + bAvl + "</td>");
                 pw.println("<td><input type=\"text\" name=" + q + " value=\"0\" text-align=\"center\"></td></tr>");

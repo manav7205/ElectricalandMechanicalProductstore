@@ -6,14 +6,14 @@ public class Book implements Serializable {
 
     private String barcode;
     private String name;
-    private String author;
+    private String supplier;
     private double price;
     private int quantity;
 
-    public Book(String barcode, String name, String author, double price, int quantity) {
+    public Book(String barcode, String name, String supplier, double price, int quantity) {
         this.barcode = barcode;
         this.name = name;
-        this.author = author;
+        this.supplier = supplier;
         this.setPrice(price);
         this.quantity = quantity;
     }
@@ -38,12 +38,12 @@ public class Book implements Serializable {
         this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getSupplier() {
+        return supplier;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
     }
 
     public int getQuantity() {

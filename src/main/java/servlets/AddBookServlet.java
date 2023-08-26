@@ -55,14 +55,14 @@ public class AddBookServlet extends HttpServlet {
             String message = bookService.addBook(book);
             if ("SUCCESS".equalsIgnoreCase(message)) {
                 pw.println(
-                        "<table class=\"tab\"><tr><td>Book Detail Updated Successfully!<br/>Add More Books</td></tr></table>");
+                        "<table class=\"tab\"><tr><td>Product Detail Updated Successfully!<br/>Add More Product</td></tr></table>");
             } else {
-                pw.println("<table class=\"tab\"><tr><td>Failed to Add Books! Fill up CareFully</td></tr></table>");
+                pw.println("<table class=\"tab\"><tr><td>Failed to Add Product! Fill up CareFully</td></tr></table>");
                 //rd.include(req, res);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            pw.println("<table class=\"tab\"><tr><td>Failed to Add Books! Fill up CareFully</td></tr></table>");
+            pw.println("<table class=\"tab\"><tr><td>Failed to Add Product! Fill up CareFully</td></tr></table>");
         }
     }
     
@@ -71,12 +71,12 @@ public class AddBookServlet extends HttpServlet {
                 + "        <tr>\r\n"
                 + "            <td>\r\n"
                 + "                <form action=\"addbook\" method=\"post\">\r\n"
-                + "                    <!-- <label for=\"bookCode\">Book Code : </label><input type=\"text\" name=\"barcode\" id=\"bookCode\" placeholder=\"Enter Book Code\" required><br/> -->\r\n"
-                + "                    <label for=\"bookName\">Book Name : </label> <input type=\"text\" name=\"name\" id=\"bookName\" placeholder=\"Enter Book's name\" required><br/>\r\n"
-                + "                    <label for=\"bookAuthor\">Book Author : </label><input type=\"text\" name=\"author\" id=\"bookAuthor\" placeholder=\"Enter Author's Name\" required><br/>\r\n"
-                + "                    <label for=\"bookPrice\">Book Price : </label><input type=\"number\" name=\"price\" placeholder=\"Enter the Price\" required><br/>\r\n"
-                + "                    <label for=\"bookQuantity\">Book Qnty : </label><input type=\"number\" name=\"quantity\" id=\"bookQuantity\" placeholder=\"Enter the quantity\" required><br/>\r\n"
-                + "                    <input class=\"btn btn-success my-2\" type=\"submit\" value=\" Add Book \">\r\n"
+                + "                    <!-- <label for=\"bookCode\">Product Code : </label><input type=\"text\" name=\"barcode\" id=\"bookCode\" placeholder=\"Enter Product Code\" required><br/> -->\r\n"
+                + "                    <label for=\"bookName\">Product Name : </label> <input type=\"text\" name=\"name\" id=\"bookName\" placeholder=\"Enter Product's name\" required><br/>\r\n"
+                + "                    <label for=\"bookAuthor\">Product Supplier : </label><input type=\"text\" name=\"author\" id=\"bookAuthor\" placeholder=\"Enter Supplier's Name\" required><br/>\r\n"
+                + "                    <label for=\"bookPrice\">Product Price : </label><input type=\"number\" name=\"price\" placeholder=\"Enter the Price\" required><br/>\r\n"
+                + "                    <label for=\"bookQuantity\">Product Qnty : </label><input type=\"number\" name=\"quantity\" id=\"bookQuantity\" placeholder=\"Enter the quantity\" required><br/>\r\n"
+                + "                    <input class=\"btn btn-success my-2\" type=\"submit\" value=\" Add Product \">\r\n"
                 + "                </form>\r\n"
                 + "            </td>\r\n"
                 + "        </tr>  \r\n"

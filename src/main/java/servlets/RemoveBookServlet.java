@@ -43,19 +43,19 @@ public class RemoveBookServlet extends HttpServlet {
 
             String responseCode = bookService.deleteBookById(bookId.trim());
             if (ResponseCode.SUCCESS.name().equalsIgnoreCase(responseCode)) {
-                pw.println("<table class=\"tab my-5\"><tr><td>Book Removed Successfully</td></tr></table>");
+                pw.println("<table class=\"tab my-5\"><tr><td>Product Removed Successfully</td></tr></table>");
                 pw.println(
-                        "<table class=\"tab\"><tr><td><a href=\"removebook\">Remove more Books</a></td></tr></table>");
+                        "<table class=\"tab\"><tr><td><a href=\"removebook\">Remove more Product</a></td></tr></table>");
 
             } else {
-                pw.println("<table class=\"tab my-5\"><tr><td>Book Not Available In The Store</td></tr></table>");
+                pw.println("<table class=\"tab my-5\"><tr><td>Product Not Available In The Store</td></tr></table>");
                 pw.println(
-                        "<table class=\"tab\"><tr><td><a href=\"removebook\">Remove more Books</a></td></tr></table>");
+                        "<table class=\"tab\"><tr><td><a href=\"removebook\">Remove more Product</a></td></tr></table>");
             }
             pw.println("</div>");
         } catch (Exception e) {
             e.printStackTrace();
-            pw.println("<table class=\"tab\"><tr><td>Failed to Remove Books! Try Again</td></tr></table>");
+            pw.println("<table class=\"tab\"><tr><td>Failed to Remove Product! Try Again</td></tr></table>");
         }
     }
 
@@ -64,9 +64,9 @@ public class RemoveBookServlet extends HttpServlet {
                 + "        <table class=\"tab\">\r\n"
                 + "        <tr>\r\n"
                 + "            <td>\r\n"
-                + "                <label for=\"bookCode\">Enter BookId to Remove </label>\r\n"
-                + "                <input type=\"text\" name=\"bookId\" placeholder=\"Enter Book Id\" id=\"bookCode\" required>\r\n"
-                + "                <input class=\"btn btn-danger my-2\" type=\"submit\" value=\"Remove Book\">\r\n"
+                + "                <label for=\"bookCode\">Enter ProductId to Remove </label>\r\n"
+                + "                <input type=\"text\" name=\"bookId\" placeholder=\"Enter Product Id\" id=\"bookCode\" required>\r\n"
+                + "                <input class=\"btn btn-danger my-2\" type=\"submit\" value=\"Remove Product\">\r\n"
                 + "            </td>\r\n"
                 + "        </tr>\r\n"
                 + "\r\n"

@@ -46,7 +46,7 @@ public class ViewBookServlet extends HttpServlet {
             StoreUtil.setActiveTab(pw, "books");
 
             // Show the heading for the page
-            pw.println("<div id='topmid' style='background-color:grey'>Available Books"
+            pw.println("<div id='topmid' style='background-color:grey'>Available Products"
                     + "<form action=\"cart\" method=\"post\" style='float:right; margin-right:20px'>"
                     + "<input type='submit' class=\"btn btn-primary\" name='cart' value='Proceed'/></form>"
                     + "</div>");
@@ -99,7 +99,7 @@ public class ViewBookServlet extends HttpServlet {
                             ? "<input type='submit' class=\"btn btn-primary\" name='addToCart' value='Add To Cart'/></form>"
                             : "<form method='post' action='cart'>"
                                     + "<button type='submit' name='removeFromCart' class=\"glyphicon glyphicon-minus btn btn-danger\"></button> "
-                                    + "<input type='hidden' name='selectedBookId' value='" + bCode + "'/>"
+                                    + "<input type='hidden' name='selectedproductId' value='" + bCode + "'/>"
                                     + cartItemQty
                                     + " <button type='submit' name='addToCart' class=\"glyphicon glyphicon-plus btn btn-success\"></button></form>")
                     + "";
@@ -111,12 +111,12 @@ public class ViewBookServlet extends HttpServlet {
         // Bootstrap card to show the book data
         return "<div class=\"card\">\r\n"
                 + "                <div class=\"row card-body\">\r\n"
-                + "                    <img class=\"col-sm-6\" src=\"logo.png\" alt=\"Card image cap\">\r\n"
+                + "                    <img class=\"col-sm-6\" src=\"product.jpeg\" alt=\"Card image cap\">\r\n"
                 + "                    <div class=\"col-sm-6\">\r\n"
                 + "                        <h5 class=\"card-title text-success\">" + book.getName() + "</h5>\r\n"
                 + "                        <p class=\"card-text\">\r\n"
-                + "                        Author: <span class=\"text-primary\" style=\"font-weight:bold;\"> "
-                + book.getAuthor()
+                + "                        Supplier: <span class=\"text-primary\" style=\"font-weight:bold;\"> "
+                + book.getSupplier()
                 + "</span><br>\r\n"
                 + "                        </p>\r\n"
                 + "                        \r\n"

@@ -49,11 +49,11 @@ public class BookServiceImpl implements BookService {
             while (rs.next()) {
                 String bCode = rs.getString(1);
                 String bName = rs.getString(2);
-                String bAuthor = rs.getString(3);
+                String bsupplier = rs.getString(3);
                 int bPrice = rs.getInt(4);
                 int bQty = rs.getInt(5);
 
-                book = new Book(bCode, bName, bAuthor, bPrice, bQty);
+                book = new Book(bCode, bName, bsupplier, bPrice, bQty);
             }
         } catch (SQLException e) {
 
@@ -73,11 +73,11 @@ public class BookServiceImpl implements BookService {
             while (rs.next()) {
                 String bCode = rs.getString(1);
                 String bName = rs.getString(2);
-                String bAuthor = rs.getString(3);
+                String bsupplier = rs.getString(3);
                 int bPrice = rs.getInt(4);
                 int bQty = rs.getInt(5);
 
-                Book book = new Book(bCode, bName, bAuthor, bPrice, bQty);
+                Book book = new Book(bCode, bName, bsupplier, bPrice, bQty);
                 books.add(book);
             }
         } catch (SQLException e) {
@@ -112,7 +112,7 @@ public class BookServiceImpl implements BookService {
             PreparedStatement ps = con.prepareStatement(addBookQuery);
             ps.setString(1, book.getBarcode());
             ps.setString(2, book.getName());
-            ps.setString(3, book.getAuthor());
+            ps.setString(3, book.getSupplier());
             ps.setDouble(4, book.getPrice());
             ps.setInt(5, book.getQuantity());
             int k = ps.executeUpdate();
@@ -157,11 +157,11 @@ public class BookServiceImpl implements BookService {
             while (rs.next()) {
                 String bCode = rs.getString(1);
                 String bName = rs.getString(2);
-                String bAuthor = rs.getString(3);
+                String bSupplier = rs.getString(3);
                 int bPrice = rs.getInt(4);
                 int bQty = rs.getInt(5);
 
-                Book book = new Book(bCode, bName, bAuthor, bPrice, bQty);
+                Book book = new Book(bCode, bName, bSupplier, bPrice, bQty);
                 books.add(book);
             }
         } catch (SQLException e) {
@@ -177,7 +177,7 @@ public class BookServiceImpl implements BookService {
         try {
             PreparedStatement ps = con.prepareStatement(updateBookByIdQuery);
             ps.setString(1, book.getName());
-            ps.setString(2, book.getAuthor());
+            ps.setString(2, book.getSupplier());
             ps.setDouble(3, book.getPrice());
             ps.setInt(4, book.getQuantity());
             ps.setString(5, book.getBarcode());

@@ -49,9 +49,9 @@ public class UpdateBookServlet extends HttpServlet {
                 String message = bookService.updateBook(book);
                 if (ResponseCode.SUCCESS.name().equalsIgnoreCase(message)) {
                     pw.println(
-                            "<table class=\"tab\"><tr><td>Book Detail Updated Successfully!</td></tr></table>");
+                            "<table class=\"tab\"><tr><td>Product Detail Updated Successfully!</td></tr></table>");
                 } else {
-                    pw.println("<table class=\"tab\"><tr><td>Failed to Update Book!!</td></tr></table>");
+                    pw.println("<table class=\"tab\"><tr><td>Failed to Update Product!!</td></tr></table>");
                     // rd.include(req, res);
                 }
 
@@ -76,17 +76,17 @@ public class UpdateBookServlet extends HttpServlet {
                 + "        <tr>\r\n"
                 + "            <td>\r\n"
                 + "                <form action=\"updatebook\" method=\"post\">\r\n"
-                + "                    <label for=\"bookCode\">Book Code : </label><input type=\"text\" name=\"barcode\" id=\"bookCode\" placeholder=\"Enter Book Code\" value='"
+                + "                    <label for=\"bookCode\">Product Code : </label><input type=\"text\" name=\"barcode\" id=\"bookCode\" placeholder=\"Enter Product Code\" value='"
                 + book.getBarcode() + "' readonly><br/>"
-                + "                    <label for=\"bookName\">Book Name : </label> <input type=\"text\" name=\"name\" id=\"bookName\" placeholder=\"Enter Book's name\" value='"
+                + "                    <label for=\"bookName\">Product Name : </label> <input type=\"text\" name=\"name\" id=\"bookName\" placeholder=\"Enter Product's name\" value='"
                 + book.getName() + "' required><br/>\r\n"
-                + "                    <label for=\"bookAuthor\">Book Author : </label><input type=\"text\" name=\"author\" id=\"bookAuthor\" placeholder=\"Enter Author's Name\" value='"
-                + book.getAuthor() + "' required><br/>\r\n"
-                + "                    <label for=\"bookPrice\">Book Price : </label><input type=\"number\" name=\"price\" placeholder=\"Enter the Price\" value='"
+                + "                    <label for=\"bookAuthor\">Product Supplier : </label><input type=\"text\" name=\"author\" id=\"bookAuthor\" placeholder=\"Enter Supplier's Name\" value='"
+                + book.getSupplier() + "' required><br/>\r\n"
+                + "                    <label for=\"bookPrice\">Product Price : </label><input type=\"number\" name=\"price\" placeholder=\"Enter the Price\" value='"
                 + book.getPrice() + "' required><br/>\r\n"
-                + "                    <label for=\"bookQuantity\">Book Qnty : </label><input type=\"number\" name=\"quantity\" id=\"bookQuantity\" placeholder=\"Enter the quantity\" value='"
+                + "                    <label for=\"bookQuantity\">Product Qnty : </label><input type=\"number\" name=\"quantity\" id=\"bookQuantity\" placeholder=\"Enter the quantity\" value='"
                 + book.getQuantity() + "' required><br/>\r\n"
-                + "                    <input class=\"btn btn-success my-2\" type=\"submit\" name='updateFormSubmitted' value=\" Update Book \">\r\n"
+                + "                    <input class=\"btn btn-success my-2\" type=\"submit\" name='updateFormSubmitted' value=\" Update Product \">\r\n"
                 + "                </form>\r\n"
                 + "            </td>\r\n"
                 + "        </tr>  \r\n"

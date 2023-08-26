@@ -50,18 +50,18 @@ public class ProcessPaymentServlet extends HttpServlet {
                 double bPrice = book.getPrice();
                 String bCode = book.getBarcode();
                 String bName = book.getName();
-                String bAuthor = book.getAuthor();
+                String bSupplier = book.getSupplier();
                 int availableQty = book.getQuantity();
                 int qtToBuy = cart.getQuantity();
                 availableQty = availableQty - qtToBuy;
                 bookService.updateBookQtyById(bCode, availableQty);
-                pw.println(this.addBookToCard(bCode, bName, bAuthor, bPrice, availableQty));
+                pw.println(this.addBookToCard(bCode, bName, bSupplier, bPrice, availableQty));
                 session.removeAttribute("qty_" + bCode);
             }
             session.removeAttribute("amountToPay");
             session.removeAttribute("cartItems");
             session.removeAttribute("items");
-            session.removeAttribute("selectedBookId");
+            session.removeAttribute("selectedProductId");
             pw.println("</div>\r\n"
                     + "    </div>");
         } catch (Exception e) {
@@ -69,15 +69,15 @@ public class ProcessPaymentServlet extends HttpServlet {
         }
     }
 
-    public String addBookToCard(String bCode, String bName, String bAuthor, double bPrice, int bQty) {
+    public String addBookToCard(String bCode, String bName, String bSupplier, double bPrice, int bQty) {
         String button = "<a href=\"#\" class=\"btn btn-info\">Order Placed</a>\r\n";
         return "<div class=\"card\">\r\n"
                 + "                <div class=\"row card-body\">\r\n"
-                + "                    <img class=\"col-sm-6\" src=\"logo.png\" alt=\"Card image cap\">\r\n"
+                + "                    <img class=\"col-sm-6\" src=\"product.jpeg\" alt=\"Card image cap\">\r\n"
                 + "                    <div class=\"col-sm-6\">\r\n"
                 + "                        <h5 class=\"card-title text-success\">" + bName + "</h5>\r\n"
                 + "                        <p class=\"card-text\">\r\n"
-                + "                        Author: <span class=\"text-primary\" style=\"font-weight:bold;\"> " + bAuthor
+                + "                        Author: <span class=\"text-primary\" style=\"font-weight:bold;\"> " + bSupplier
                 + "</span><br>\r\n"
                 + "                        </p>\r\n"
                 + "                        \r\n"
